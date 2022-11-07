@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class PlayerShooting : MonoBehaviour
+public class BulletScript : MonoBehaviour
 {
+    public float bulletSpeed = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +14,6 @@ public class PlayerShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Vector2.up * bulletSpeed * Time.deltaTime);
     }
 }

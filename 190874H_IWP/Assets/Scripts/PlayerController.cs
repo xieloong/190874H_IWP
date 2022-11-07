@@ -8,7 +8,10 @@ public class PlayerController : MonoBehaviour
     public float speed = 5;
     private Vector2 movementInput = Vector2.zero;
     private Controls controls;
+
     Rigidbody2D rb2D;
+
+    public GameObject playerBullet;
 
     void Start()
     {
@@ -43,8 +46,8 @@ public class PlayerController : MonoBehaviour
         movementInput = ctx.ReadValue<Vector2>();
     }
 
-    public void Shoot(InputAction.CallbackContext context)
+    public void Shoot(InputAction.CallbackContext ctx)
     {
-        Debug.Log("Fire!");
+        Instantiate(playerBullet, transform.position, Quaternion.identity);
     }
 }
