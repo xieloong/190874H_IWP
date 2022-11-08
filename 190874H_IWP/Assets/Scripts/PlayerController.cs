@@ -12,10 +12,12 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb2D;
 
     public GameObject playerBullet;
+    public float spawntimeBullet = 2f;
 
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        StartCoroutine(AutoFire());
     }
 
     private void Awake()
@@ -46,8 +48,17 @@ public class PlayerController : MonoBehaviour
         movementInput = ctx.ReadValue<Vector2>();
     }
 
-    public void Shoot(InputAction.CallbackContext ctx)
+    public void SpawnBullet()
     {
         Instantiate(playerBullet, transform.position, Quaternion.identity);
+    }
+
+    IEnumerator AutoFire()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(spawntimeBullet);
+            SpawnBullet();
+        }
     }
 }

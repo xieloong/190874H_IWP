@@ -97,4 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b37a44b8c7dd7bd4891ab209f0c163de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerBullet: {fileID: 8670988049431215806}
   bulletSpeed: 10
+  spawntimeBullet: 2
