@@ -11,12 +11,18 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D rb2D;
 
+    public Transform spawnPoint;
+    public Transform spawnPoint2;
+
     public GameObject playerBullet;
     public float spawntimeBullet = 2f;
+
+    public GameObject muzzleFlash;
 
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        muzzleFlash.SetActive(false);
         StartCoroutine(AutoFire());
     }
 
@@ -50,7 +56,8 @@ public class PlayerController : MonoBehaviour
 
     public void SpawnBullet()
     {
-        Instantiate(playerBullet, transform.position, Quaternion.identity);
+        Instantiate(playerBullet, spawnPoint.position, Quaternion.identity);
+        Instantiate(playerBullet, spawnPoint2.position, Quaternion.identity);
     }
 
     IEnumerator AutoFire()
@@ -59,6 +66,9 @@ public class PlayerController : MonoBehaviour
         {
             yield return new WaitForSeconds(spawntimeBullet);
             SpawnBullet();
+            muzzleFlash.SetActive(true);
+            yield return new WaitForSeconds(0.08f);
+            muzzleFlash.SetActive(false);
         }
     }
 }
