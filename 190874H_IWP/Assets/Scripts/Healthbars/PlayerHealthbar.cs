@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefaultEnemyScript : MonoBehaviour
+public class PlayerHealthbar : MonoBehaviour
 {
+    public Transform bar;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,10 @@ public class DefaultEnemyScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SizeAdjustPlayerHealth(float size)
+    {
+        bar.localScale = new Vector2(size, 1f);
     }
 }

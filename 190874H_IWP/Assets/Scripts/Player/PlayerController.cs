@@ -19,11 +19,21 @@ public class PlayerController : MonoBehaviour
 
     public GameObject muzzleFlash;
 
+    public GameObject playerExplosion;
+
+    public PlayerHealthbar playerHealthbar;
+    public float playerHealth = 20f;
+
+    //Healthbar UI
+    float playerbarSize = 1f;
+    public float playerDamage = 0f;
+
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
         muzzleFlash.SetActive(false);
         StartCoroutine(AutoFire());
+        playerDamage = playerbarSize / playerHealth;
     }
 
     private void Awake()
@@ -69,6 +79,33 @@ public class PlayerController : MonoBehaviour
             muzzleFlash.SetActive(true);
             yield return new WaitForSeconds(0.08f);
             muzzleFlash.SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.tag == "EnemyBullet")
+        {
+            AdjustPlayerHealthBar();
+            Destroy(collision.gameObject);
+
+            if (playerHealth <= 0)
+            {
+                Destroy(gameObject);
+                GameObject playerExplode = Instantiate(playerExplosion, transform.position, Quaternion.identity);
+                Destroy(playerExplode, 0.5f);
+            }
+        }
+    }
+
+    void AdjustPlayerHealthBar() //if gets damaged by player (Healthbar UI for enemy)
+    {
+        if (playerHealth > 0)
+        {
+            playerHealth -= 1;
+            playerbarSize = playerbarSize - playerDamage;
+            playerHealthbar.SizeAdjustPlayerHealth(playerbarSize);
         }
     }
 }
