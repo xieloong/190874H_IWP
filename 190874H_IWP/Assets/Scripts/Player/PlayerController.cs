@@ -26,14 +26,14 @@ public class PlayerController : MonoBehaviour
 
     //Healthbar UI
     float playerbarSize = 1f;
-    public float playerDamage = 0f;
+    public float playerDamaged = 0f;
 
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
         muzzleFlash.SetActive(false);
         StartCoroutine(AutoFire());
-        playerDamage = playerbarSize / playerHealth;
+        playerDamaged = playerbarSize / playerHealth;
     }
 
     private void Awake()
@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
         if (playerHealth > 0)
         {
             playerHealth -= 1;
-            playerbarSize = playerbarSize - playerDamage;
+            playerbarSize = playerbarSize - playerDamaged;
             playerHealthbar.SizeAdjustPlayerHealth(playerbarSize);
         }
     }

@@ -16,13 +16,13 @@ public class DefaultEnemyScript : MonoBehaviour
 
     //Healthbar UI
     float enemybarSize = 1f;
-    public float enemyDamage = 0f;
+    public float enemyDamaged = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(EnemyNormalShooting());
-        enemyDamage = enemybarSize / enemyHealth;
+        enemyDamaged = enemybarSize / enemyHealth;
     }
 
     // Update is called once per frame
@@ -52,7 +52,7 @@ public class DefaultEnemyScript : MonoBehaviour
         if (enemyHealth > 0)
         {
             enemyHealth -= 1;
-            enemybarSize = enemybarSize - enemyDamage;
+            enemybarSize = enemybarSize - enemyDamaged;
             enemyHealthbar.SizeAdjustEnemyHealth(enemybarSize);
         }
     }
