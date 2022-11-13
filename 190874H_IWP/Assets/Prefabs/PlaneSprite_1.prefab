@@ -306,11 +306,12 @@ MonoBehaviour:
   spawnPoint: {fileID: 1064601111055310166}
   spawnPoint2: {fileID: 4193559606221550723}
   playerBullet: {fileID: 8670988049431215806, guid: 03522bde1889b67479a37787731a17d3, type: 3}
-  spawntimeBullet: 2
+  spawntimeBullet: 0.5
   muzzleFlash: {fileID: 3955277168215227136}
   playerExplosion: {fileID: 7502412713019749354, guid: 5b413825938a9bf4497afcfec76f6eae, type: 3}
   playerHealthbar: {fileID: 4072013005429614261}
   playerHealth: 20
+  playerDamaged: 0
 --- !u!50 &6389882112265525687
 Rigidbody2D:
   serializedVersion: 4
@@ -546,7 +547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1429995643257723518, guid: a540b52f3b5bef944939507b500a90a8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.47
+      value: 0.27
       objectReference: {fileID: 0}
     - target: {fileID: 1429995643257723518, guid: a540b52f3b5bef944939507b500a90a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -554,7 +555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1429995643257723518, guid: a540b52f3b5bef944939507b500a90a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.47
+      value: -1.17
       objectReference: {fileID: 0}
     - target: {fileID: 1429995643257723518, guid: a540b52f3b5bef944939507b500a90a8, type: 3}
       propertyPath: m_LocalPosition.z

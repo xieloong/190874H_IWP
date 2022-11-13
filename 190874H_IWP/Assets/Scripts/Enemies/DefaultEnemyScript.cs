@@ -18,6 +18,9 @@ public class DefaultEnemyScript : MonoBehaviour
     float enemybarSize = 1f;
     public float enemyDamaged = 0f;
 
+    public GameObject damageEffect;
+    [SerializeField] BlinkingEffect blinkingEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +31,7 @@ public class DefaultEnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,6 +40,11 @@ public class DefaultEnemyScript : MonoBehaviour
         {
             AdjustEnemyHealthBar();
             Destroy(collision.gameObject);
+
+            blinkingEffect.Flash();
+
+            GameObject DamageVFX = Instantiate(damageEffect, collision.transform.position, Quaternion.identity);
+            Destroy(DamageVFX, 0.1f);
 
             if (enemyHealth <= 0)
             {
