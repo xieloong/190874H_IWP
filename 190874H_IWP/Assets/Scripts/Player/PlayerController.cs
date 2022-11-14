@@ -22,18 +22,22 @@ public class PlayerController : MonoBehaviour
     public GameObject playerExplosion;
 
     public PlayerHealthbar playerHealthbar;
-    public float playerHealth = 20f;
+    public float maxplayerHealth = 20f;
+    public float currentplayerHealth;
 
     //Healthbar UI
     float playerbarSize = 1f;
     public float playerDamaged = 0f;
+
+    public BulletScript bulletScript;
 
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
         muzzleFlash.SetActive(false);
         StartCoroutine(AutoFire());
-        playerDamaged = playerbarSize / playerHealth;
+        playerDamaged = playerbarSize / currentplayerHealth;
+        currentplayerHealth = maxplayerHealth;
     }
 
     private void Awake()
@@ -90,7 +94,7 @@ public class PlayerController : MonoBehaviour
             AdjustPlayerHealthBar();
             Destroy(collision.gameObject);
 
-            if (playerHealth <= 0)
+            if (currentplayerHealth <= 0)
             {
                 Destroy(gameObject);
                 GameObject playerExplode = Instantiate(playerExplosion, transform.position, Quaternion.identity);
@@ -101,11 +105,11 @@ public class PlayerController : MonoBehaviour
 
     void AdjustPlayerHealthBar() //if gets damaged by player (Healthbar UI for enemy)
     {
-        if (playerHealth > 0)
+        if (currentplayerHealth > 0)
         {
-            playerHealth -= 1;
-            playerbarSize = playerbarSize - playerDamaged;
-            playerHealthbar.SizeAdjustPlayerHealth(playerbarSize);
+            currentplayerHealth -= bulletScript.bulletDamage;
+            float percentageplayerHP = currentplayerHealth / maxplayerHealth;
+            playerHealthbar.SizeAdjustPlayerHealth(percentageplayerHP);
         }
     }
 }

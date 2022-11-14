@@ -12,7 +12,8 @@ public class DefaultEnemyScript : MonoBehaviour
     public GameObject enemyExplosion;
 
     public EnemyHealthbar enemyHealthbar;
-    public float enemyHealth = 10f;
+    public float maxenemyHealth = 10f;
+    public float currentenemyHealth;
 
     //Healthbar UI
     float enemybarSize = 1f;
@@ -20,12 +21,14 @@ public class DefaultEnemyScript : MonoBehaviour
 
     public GameObject damageEffect;
     [SerializeField] BlinkingEffect blinkingEffect;
+    public BulletScript bulletScript;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(EnemyNormalShooting());
-        enemyDamaged = enemybarSize / enemyHealth;
+        currentenemyHealth = maxenemyHealth;
+        enemyDamaged = enemybarSize / currentenemyHealth;
     }
 
     // Update is called once per frame
@@ -46,7 +49,7 @@ public class DefaultEnemyScript : MonoBehaviour
             GameObject DamageVFX = Instantiate(damageEffect, collision.transform.position, Quaternion.identity);
             Destroy(DamageVFX, 0.1f);
 
-            if (enemyHealth <= 0)
+            if (currentenemyHealth <= 0)
             {
                 Destroy(gameObject);
                 GameObject explosion = Instantiate(enemyExplosion, transform.position, Quaternion.identity); //enemy explosion animation
@@ -57,11 +60,11 @@ public class DefaultEnemyScript : MonoBehaviour
 
     void AdjustEnemyHealthBar() //if gets damaged by player (Healthbar UI for enemy)
     {
-        if (enemyHealth > 0)
+        if (currentenemyHealth > 0)
         {
-            enemyHealth -= 1;
-            enemybarSize = enemybarSize - enemyDamaged;
-            enemyHealthbar.SizeAdjustEnemyHealth(enemybarSize);
+            currentenemyHealth -= bulletScript.bulletDamage;
+            float percentageenemyHP = currentenemyHealth / maxenemyHealth;
+            enemyHealthbar.SizeAdjustEnemyHealth(percentageenemyHP);
         }
     }
 

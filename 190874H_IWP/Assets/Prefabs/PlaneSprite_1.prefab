@@ -153,6 +153,7 @@ Transform:
   - {fileID: 4193559606221550723}
   - {fileID: 1651355685565548929}
   - {fileID: 8191969492410039500}
+  - {fileID: 1793644096837894801}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -310,8 +311,10 @@ MonoBehaviour:
   muzzleFlash: {fileID: 3955277168215227136}
   playerExplosion: {fileID: 7502412713019749354, guid: 5b413825938a9bf4497afcfec76f6eae, type: 3}
   playerHealthbar: {fileID: 4072013005429614261}
-  playerHealth: 20
+  maxplayerHealth: 20
+  currentplayerHealth: 0
   playerDamaged: 0
+  bulletScript: {fileID: 1638430877176434234}
 --- !u!50 &6389882112265525687
 Rigidbody2D:
   serializedVersion: 4
@@ -499,6 +502,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &5386398752938601044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1793644096837894801}
+  - component: {fileID: 1638430877176434234}
+  m_Layer: 0
+  m_Name: BulletScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1793644096837894801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5386398752938601044}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0035480163, y: 0.007892784, z: -0.95}
+  m_LocalScale: {x: 0.56440246, y: 0.56744486, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1885595320989480638}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1638430877176434234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5386398752938601044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b37a44b8c7dd7bd4891ab209f0c163de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 10
+  bulletDamage: 2
 --- !u!1 &5514368087999780020
 GameObject:
   m_ObjectHideFlags: 0
