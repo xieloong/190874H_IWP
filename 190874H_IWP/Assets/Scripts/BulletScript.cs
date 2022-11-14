@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     public float bulletSpeed = 10f;
-    public float bulletDamage = 10f;
+    public float bulletDamageTaken = 10f;
     // Start is called before the first frame update
     void Start()
     {

@@ -23,20 +23,16 @@ public class PlayerController : MonoBehaviour
 
     public PlayerHealthbar playerHealthbar;
     public float maxplayerHealth = 20f;
-    public float currentplayerHealth;
+    float currentplayerHealth;
 
     //Healthbar UI
     float playerbarSize = 1f;
-    public float playerDamaged = 0f;
-
-    public BulletScript bulletScript;
 
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
         muzzleFlash.SetActive(false);
         StartCoroutine(AutoFire());
-        playerDamaged = playerbarSize / currentplayerHealth;
         currentplayerHealth = maxplayerHealth;
     }
 
@@ -91,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.tag == "EnemyBullet")
         {
-            AdjustPlayerHealthBar();
+            AdjustPlayerHealthBar(collision.gameObject);
             Destroy(collision.gameObject);
 
             if (currentplayerHealth <= 0)
@@ -103,11 +99,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void AdjustPlayerHealthBar() //if gets damaged by player (Healthbar UI for enemy)
+    void AdjustPlayerHealthBar(GameObject collision) //if gets damaged by player (Healthbar UI for enemy)
     {
         if (currentplayerHealth > 0)
         {
-            currentplayerHealth -= bulletScript.bulletDamage;
+            currentplayerHealth -= collision.GetComponent<BulletScript>().bulletDamageTaken;
             float percentageplayerHP = currentplayerHealth / maxplayerHealth;
             playerHealthbar.SizeAdjustPlayerHealth(percentageplayerHP);
         }

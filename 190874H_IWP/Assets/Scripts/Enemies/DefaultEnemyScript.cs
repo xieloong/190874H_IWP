@@ -6,29 +6,26 @@ public class DefaultEnemyScript : MonoBehaviour
 {
     public float enemybulletspawnTime = 0.5f;
 
-    public Transform enemybulletSpawnPoint;
+    public Transform []enemybulletSpawnPoint;
     public GameObject enemyBullet;
 
     public GameObject enemyExplosion;
 
     public EnemyHealthbar enemyHealthbar;
     public float maxenemyHealth = 10f;
-    public float currentenemyHealth;
+    float currentenemyHealth;
 
     //Healthbar UI
     float enemybarSize = 1f;
-    public float enemyDamaged = 0f;
 
     public GameObject damageEffect;
     [SerializeField] BlinkingEffect blinkingEffect;
-    public BulletScript bulletScript;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(EnemyNormalShooting());
         currentenemyHealth = maxenemyHealth;
-        enemyDamaged = enemybarSize / currentenemyHealth;
     }
 
     // Update is called once per frame
@@ -41,7 +38,7 @@ public class DefaultEnemyScript : MonoBehaviour
     {
         if (collision.tag == "PlayerBullet")
         {
-            AdjustEnemyHealthBar();
+            AdjustEnemyHealthBar(collision.gameObject);
             Destroy(collision.gameObject);
 
             blinkingEffect.Flash();
@@ -58,11 +55,11 @@ public class DefaultEnemyScript : MonoBehaviour
         }
     }
 
-    void AdjustEnemyHealthBar() //if gets damaged by player (Healthbar UI for enemy)
+    void AdjustEnemyHealthBar(GameObject collision) //if gets damaged by player (Healthbar UI for enemy)
     {
         if (currentenemyHealth > 0)
         {
-            currentenemyHealth -= bulletScript.bulletDamage;
+            currentenemyHealth -= collision.GetComponent<BulletScript>().bulletDamageTaken;
             float percentageenemyHP = currentenemyHealth / maxenemyHealth;
             enemyHealthbar.SizeAdjustEnemyHealth(percentageenemyHP);
         }
@@ -70,7 +67,10 @@ public class DefaultEnemyScript : MonoBehaviour
 
     void EnemyNormalFire()
     {
-        Instantiate(enemyBullet, enemybulletSpawnPoint.position, Quaternion.identity);
+        for (int i = 0; i < enemybulletSpawnPoint.Length; i++)
+        {
+            Instantiate(enemyBullet, enemybulletSpawnPoint[i].position, Quaternion.identity);
+        }
     }
 
     IEnumerator EnemyNormalShooting()
