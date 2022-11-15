@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3259180405573485124}
   - component: {fileID: -7304530769996420128}
   m_Layer: 0
-  m_Name: PlayerBullet
-  m_TagString: PlayerBullet
+  m_Name: EnemyBullet2
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b37a44b8c7dd7bd4891ab209f0c163de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 10
-  bulletDamageTaken: 0
+  bulletSpeed: -15
+  bulletDamageTaken: 2
 --- !u!61 &-7304530769996420128
 BoxCollider2D:
   m_ObjectHideFlags: 0

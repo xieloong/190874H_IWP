@@ -311,8 +311,6 @@ MonoBehaviour:
   playerExplosion: {fileID: 7502412713019749354, guid: 5b413825938a9bf4497afcfec76f6eae, type: 3}
   playerHealthbar: {fileID: 4072013005429614261}
   maxplayerHealth: 20
-  playerDamaged: 0
-  bulletScript: {fileID: 0}
 --- !u!50 &6389882112265525687
 Rigidbody2D:
   serializedVersion: 4
