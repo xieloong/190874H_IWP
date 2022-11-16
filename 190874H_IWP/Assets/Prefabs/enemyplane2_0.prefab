@@ -130,6 +130,7 @@ MonoBehaviour:
   enemyExplosion: {fileID: 7502412713019749354, guid: 5b413825938a9bf4497afcfec76f6eae, type: 3}
   enemyHealthbar: {fileID: 1906974002269199145}
   maxenemyHealth: 10
+  planeSpeed: 5
   damageEffect: {fileID: 30392967673015071, guid: c9345531135c7d146b38fbe1d4bb523f, type: 3}
   blinkingEffect: {fileID: 3235883498157678259}
 --- !u!114 &3235883498157678259

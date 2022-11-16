@@ -15,6 +15,8 @@ public class DefaultEnemyScript : MonoBehaviour
     public float maxenemyHealth = 10f;
     float currentenemyHealth;
 
+    public float planeSpeed = 5f;
+
     //Healthbar UI
     float enemybarSize = 1f;
 
@@ -31,7 +33,7 @@ public class DefaultEnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        transform.Translate(Vector2.down * planeSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
