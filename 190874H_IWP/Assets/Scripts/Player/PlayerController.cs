@@ -11,8 +11,7 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D rb2D;
 
-    public Transform spawnPoint;
-    public Transform spawnPoint2;
+    public Transform []spawnPoint;
 
     public GameObject playerBullet;
     public float spawntimeBullet = 2f;
@@ -66,8 +65,10 @@ public class PlayerController : MonoBehaviour
 
     public void SpawnBullet()
     {
-        Instantiate(playerBullet, spawnPoint.position, Quaternion.identity);
-        Instantiate(playerBullet, spawnPoint2.position, Quaternion.identity);
+        for (int i = 0; i < spawnPoint.Length; i++)
+        {
+            Instantiate(playerBullet, spawnPoint[i].position, Quaternion.identity);
+        }
     }
 
     IEnumerator AutoFire()

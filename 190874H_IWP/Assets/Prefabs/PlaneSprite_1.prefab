@@ -303,8 +303,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  spawnPoint: {fileID: 1064601111055310166}
-  spawnPoint2: {fileID: 4193559606221550723}
+  spawnPoint:
+  - {fileID: 1064601111055310166}
+  - {fileID: 4193559606221550723}
   playerBullet: {fileID: 8670988049431215806, guid: 03522bde1889b67479a37787731a17d3, type: 3}
   spawntimeBullet: 0.5
   muzzleFlash: {fileID: 3955277168215227136}
