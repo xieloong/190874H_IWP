@@ -5,9 +5,31 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "PowerUps/BulletCountUp")]
 public class BulletCountUp : PowerUpEffect
 {
-    public float bulletSpawnTime = 0.1f;
+    float bulletSpawnTime = 0.1f;
+    PlayerController playerController;
+
+    void Awake()
+    {
+
+    }
+
     public override void ApplyBuff(GameObject target)
     {
-        target.GetComponent<PlayerController>().spawntimeBullet = bulletSpawnTime;
+        if (IsAbilityReady())
+        {
+            target.GetComponent<PlayerController>().spawntimeBullet = bulletSpawnTime;
+            PutOnCooldown();
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    public override void ResetBuff(PlayerController playerController)
+    {
+        playerController.spawntimeBullet = 0.5f;
     }
 }
+
+

@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 8300236824498681850}
   - component: {fileID: 6389882112265525687}
   - component: {fileID: 7480588068901521425}
+  - component: {fileID: 765046141436001652}
   m_Layer: 0
   m_Name: PlaneSprite_1
   m_TagString: Untagged
@@ -414,6 +415,19 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &765046141436001652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2591303727438204705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705ac3b900ffeec4696f2e9582ba7656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilitiesOnCooldown: []
 --- !u!1 &3955277168215227136
 GameObject:
   m_ObjectHideFlags: 0
