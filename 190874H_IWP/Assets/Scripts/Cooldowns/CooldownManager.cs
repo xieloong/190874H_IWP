@@ -27,7 +27,6 @@ public class CooldownManager : MonoBehaviour
         for (int i = 0; i < AbilitiesOnCooldown.Count; i++)
         {
             AbilitiesOnCooldown[i].currentCooldown -= Time.deltaTime;
-
             if (AbilitiesOnCooldown[i].currentCooldown <= 0)
             {
                 AbilitiesOnCooldown[i].currentCooldown = 0;
@@ -43,6 +42,17 @@ public class CooldownManager : MonoBehaviour
         {
             powerupEffect.currentCooldown = powerupEffect.maxCooldown;
             AbilitiesOnCooldown.Add(powerupEffect);
+        }
+    }
+
+    public void ResetCooldown()
+    {
+        for (int i = 0; i < AbilitiesOnCooldown.Count; i++)
+        {
+            AbilitiesOnCooldown[i].currentCooldown -= Time.deltaTime;
+            AbilitiesOnCooldown[i].currentCooldown = 0;
+            AbilitiesOnCooldown[i].ResetBuff(GetComponent<PlayerController>());
+            AbilitiesOnCooldown.Remove(AbilitiesOnCooldown[i]);          
         }
     }
 }

@@ -22,7 +22,9 @@ public class PlayerController : MonoBehaviour
 
     public PlayerHealthbar playerHealthbar;
     public float maxplayerHealth = 20f;
-    float currentplayerHealth;
+    public float currentplayerHealth;
+
+    bool isPlayerAlive;
 
     //Healthbar UI
     float playerbarSize = 1f;
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         muzzleFlash.SetActive(false);
         StartCoroutine(AutoFire());
+
         currentplayerHealth = maxplayerHealth;
     }
 
@@ -53,7 +56,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector2(movementInput.x, movementInput.y) * speed * Time.deltaTime);   
+        transform.Translate(new Vector2(movementInput.x, movementInput.y) * speed * Time.deltaTime);
     }
 
     public void OnMove(InputAction.CallbackContext ctx)
@@ -92,6 +95,8 @@ public class PlayerController : MonoBehaviour
 
             if (currentplayerHealth <= 0)
             {
+                isPlayerAlive = false;
+                GetComponent<CooldownManager>().ResetCooldown();
                 Destroy(gameObject);
                 GameObject playerExplode = Instantiate(playerExplosion, transform.position, Quaternion.identity);
                 Destroy(playerExplode, 0.5f);
@@ -107,5 +112,19 @@ public class PlayerController : MonoBehaviour
             float percentageplayerHP = currentplayerHealth / maxplayerHealth;
             playerHealthbar.SizeAdjustPlayerHealth(percentageplayerHP);
         }
+    }
+
+    public bool IsPlayerAlive()
+    {
+        if (currentplayerHealth <= 0)
+        {
+            isPlayerAlive = false;
+        }
+        else
+        {
+            isPlayerAlive = true;
+        }
+
+        return isPlayerAlive;
     }
 }

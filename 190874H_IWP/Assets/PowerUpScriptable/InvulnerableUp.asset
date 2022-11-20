@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2817a3a0f84e3a48896c7be6e45262f, type: 3}
-  m_Name: BulletCountUp
+  m_Script: {fileID: 11500000, guid: 25d70ff67fdcdf643a0a4da1f988f492, type: 3}
+  m_Name: InvulnerableUp
   m_EditorClassIdentifier: 
   currentCooldown: 0
-  maxCooldown: 5
-  bulletSpawnTime: 0.1
+  maxCooldown: 10

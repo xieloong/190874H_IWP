@@ -7,6 +7,11 @@ public abstract class PowerUpEffect : ScriptableObject
     public float currentCooldown = 0f;
     public float maxCooldown;
 
+    void Start()
+    {
+        currentCooldown = 0f;
+    }
+
     public void PutOnCooldown()
     {
         CooldownManager.cooldownmanagerInstance.StartCooldown(this);

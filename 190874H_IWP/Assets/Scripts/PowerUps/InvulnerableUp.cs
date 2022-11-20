@@ -2,22 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "PowerUps/BulletCountUp")]
-public class BulletCountUp : PowerUpEffect
+[CreateAssetMenu(menuName = "PowerUps/InvulnerableUp")]
+public class InvulnerableUp : PowerUpEffect
 {
-    public float bulletSpawnTime = 0.1f;
-    PlayerController playerController;
-
-    void Awake()
-    {
-
-    }
-
     public override void ApplyBuff(GameObject target)
     {
         if (IsAbilityReady())
         {
-            target.GetComponent<PlayerController>().spawntimeBullet = bulletSpawnTime;
+            target.GetComponent<PlayerController>().GetComponent<Collider2D>().enabled = false;
             PutOnCooldown();
         }
         else
@@ -28,8 +20,6 @@ public class BulletCountUp : PowerUpEffect
 
     public override void ResetBuff(PlayerController playerController)
     {
-        playerController.spawntimeBullet = 0.5f;
+        playerController.GetComponent<Collider2D>().enabled = true;
     }
 }
-
-
