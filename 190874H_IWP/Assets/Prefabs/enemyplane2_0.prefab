@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5136100684473640550}
   m_Layer: 0
   m_Name: enemyplane2_0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,8 @@ MonoBehaviour:
   enemyBullet: {fileID: 8670988049431215806, guid: 9a01f8997db1cb34b98c0fd2669177cb, type: 3}
   enemyExplosion: {fileID: 7502412713019749354, guid: 5b413825938a9bf4497afcfec76f6eae, type: 3}
   enemyHealthbar: {fileID: 1906974002269199145}
-  maxenemyHealth: 10
+  maxenemyHealth: 3
+  currentenemyHealth: 0
   planeSpeed: 5
   damageEffect: {fileID: 30392967673015071, guid: c9345531135c7d146b38fbe1d4bb523f, type: 3}
   blinkingEffect: {fileID: 3235883498157678259}

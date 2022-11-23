@@ -2,28 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class PowerUpSpawner : MonoBehaviour
 {
-    public GameObject[] typesofEnemy;
+    public GameObject[] typesofPowerUps;
     public float respawnTime = 2f;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(GameObjectSpawner());
+        StartCoroutine(PowerUptSpawner());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
-    IEnumerator GameObjectSpawner()
+    IEnumerator PowerUptSpawner()
     {
         while (true)
         {
             yield return new WaitForSeconds(respawnTime);
-            SpawnEnemy();
+            SpawnPowerUp();
         }
     }
 
@@ -32,10 +31,10 @@ public class Spawner : MonoBehaviour
 
     }
    
-    void SpawnEnemy()
+    void SpawnPowerUp()
     {
-        int randomNumber = Random.Range(0, typesofEnemy.Length);
+        int randomNumber = Random.Range(0, typesofPowerUps.Length);
         int randomXpos = Random.Range(-6, 6);
-        Instantiate(typesofEnemy[randomNumber], new Vector2(randomXpos, transform.position.y), Quaternion.identity);
+        Instantiate(typesofPowerUps[randomNumber], new Vector2(randomXpos, transform.position.y), Quaternion.identity);
     }
 }

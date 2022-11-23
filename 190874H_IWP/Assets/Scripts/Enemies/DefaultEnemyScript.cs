@@ -13,7 +13,7 @@ public class DefaultEnemyScript : MonoBehaviour
 
     public EnemyHealthbar enemyHealthbar;
     public float maxenemyHealth = 10f;
-    float currentenemyHealth;
+    public float currentenemyHealth;
 
     public float planeSpeed = 5f;
 
