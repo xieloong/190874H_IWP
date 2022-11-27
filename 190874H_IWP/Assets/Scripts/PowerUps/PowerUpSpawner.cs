@@ -35,6 +35,7 @@ public class PowerUpSpawner : MonoBehaviour
     {
         int randomNumber = Random.Range(0, typesofPowerUps.Length);
         int randomXpos = Random.Range(-6, 6);
-        Instantiate(typesofPowerUps[randomNumber], new Vector2(randomXpos, transform.position.y), Quaternion.identity);
+        int randomYpos = Random.Range(-4, 8);
+        Instantiate(typesofPowerUps[randomNumber], new Vector2(randomXpos, randomYpos), Quaternion.identity);
     }
 }

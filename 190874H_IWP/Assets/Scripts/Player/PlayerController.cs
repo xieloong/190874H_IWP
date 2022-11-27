@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameController gameController;
+
     public float speed = 5;
     private Vector2 movementInput = Vector2.zero;
     private Controls controls;
@@ -95,8 +97,8 @@ public class PlayerController : MonoBehaviour
 
             if (currentplayerHealth <= 0)
             {
-                isPlayerAlive = false;
                 GetComponent<CooldownManager>().ResetCooldown();
+                gameController.GameOver();
                 Destroy(gameObject);
                 GameObject playerExplode = Instantiate(playerExplosion, transform.position, Quaternion.identity);
                 Destroy(playerExplode, 0.5f);
