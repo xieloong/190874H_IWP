@@ -31,6 +31,11 @@ public class PlayerController : MonoBehaviour
     //Healthbar UI
     float playerbarSize = 1f;
 
+    //Audio sound effects
+    public AudioSource audioSource;
+    public AudioClip dmgSound;
+    public AudioClip dieSound;
+
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
@@ -81,6 +86,7 @@ public class PlayerController : MonoBehaviour
         {
             yield return new WaitForSeconds(spawntimeBullet);
             SpawnBullet();
+            audioSource.Play();
             muzzleFlash.SetActive(true);
             yield return new WaitForSeconds(0.08f);
             muzzleFlash.SetActive(false);
@@ -92,11 +98,13 @@ public class PlayerController : MonoBehaviour
 
         if (collision.tag == "EnemyBullet")
         {
+            audioSource.PlayOneShot(dmgSound, 0.5f);
             AdjustPlayerHealthBar(collision.gameObject);
             Destroy(collision.gameObject);
 
             if (currentplayerHealth <= 0)
             {
+                AudioSource.PlayClipAtPoint(dieSound, Camera.main.transform.position, 0.5f);
                 GetComponent<CooldownManager>().ResetCooldown();
                 gameController.GameOver();
                 Destroy(gameObject);

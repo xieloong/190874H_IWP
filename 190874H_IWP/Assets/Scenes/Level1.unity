@@ -2821,12 +2821,41 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8049446653956858676, guid: 5dc1a1f2bc53bda40a08fb88123b63fb, type: 3}
+      propertyPath: m_Volume
+      value: 0.534
+      objectReference: {fileID: 0}
+    - target: {fileID: 8049446653956858676, guid: 5dc1a1f2bc53bda40a08fb88123b63fb, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: df29b25e37446334b8dbc5a609bf40ac, type: 3}
+    - target: {fileID: 8049446653956858676, guid: 5dc1a1f2bc53bda40a08fb88123b63fb, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300236824498681850, guid: 5dc1a1f2bc53bda40a08fb88123b63fb, type: 3}
+      propertyPath: dieSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 10f0e9fcbc8380546a80f17ba2de9db5, type: 3}
+    - target: {fileID: 8300236824498681850, guid: 5dc1a1f2bc53bda40a08fb88123b63fb, type: 3}
+      propertyPath: dmgSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a08399e614011d34e813a1d124c1966f, type: 3}
+    - target: {fileID: 8300236824498681850, guid: 5dc1a1f2bc53bda40a08fb88123b63fb, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1580790694}
     - target: {fileID: 8300236824498681850, guid: 5dc1a1f2bc53bda40a08fb88123b63fb, type: 3}
       propertyPath: gameController
       value: 
       objectReference: {fileID: 384117865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dc1a1f2bc53bda40a08fb88123b63fb, type: 3}
+--- !u!82 &1580790694 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8049446653956858676, guid: 5dc1a1f2bc53bda40a08fb88123b63fb, type: 3}
+  m_PrefabInstance: {fileID: 1580790693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1587415848
 GameObject:
   m_ObjectHideFlags: 0
