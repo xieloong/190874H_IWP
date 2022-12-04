@@ -10,9 +10,17 @@ public class GameController : MonoBehaviour
 
     [Header("GameOver Menu")]
     public GameObject gameoverMenu;
+
+    public GameObject levelcompleteMenu;
+
+    public GameObject endText; 
+
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
+        endText.SetActive(false);
+        levelcompleteMenu.SetActive(false);
         pauseMenu.SetActive(false);
         pauseButton.SetActive(true);
 
@@ -43,6 +51,15 @@ public class GameController : MonoBehaviour
     {
         gameoverMenu.SetActive(true);
         pauseButton.SetActive(false);
+    }
+
+    public IEnumerator LevelCompleted()
+    {
+        yield return new WaitForSeconds(2f);
+        endText.SetActive(true); 
+        yield return new WaitForSeconds(2f);
+        Time.timeScale = 0f;
+        levelcompleteMenu.SetActive(true);
     }
 
     public void QuitGame()

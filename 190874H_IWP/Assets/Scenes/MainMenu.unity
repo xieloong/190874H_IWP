@@ -1990,6 +1990,8 @@ MonoBehaviour:
   - {fileID: 707741275496235621, guid: bdf87627f67d49f4eb9949a1217dffa5, type: 3}
   - {fileID: 5370314407313155382, guid: 48b9a3e5ee1fbb54cab9e2e46cc05f6f, type: 3}
   respawnTime: 2
+  enemyspawnCount: 10
+  gameController: {fileID: 0}
 --- !u!1 &1889547013
 GameObject:
   m_ObjectHideFlags: 0
@@ -2155,7 +2157,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1761036628}
         m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
-        m_MethodName: ReloadScenes
+        m_MethodName: NextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

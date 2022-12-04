@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class LevelLoader : MonoBehaviour
 {
+    int currentIndex;
+
     public GameObject levelLoader;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     // Update is called once per frame
@@ -19,9 +21,14 @@ public class LevelLoader : MonoBehaviour
         
     }
 
+    public void NextScene()
+    {
+        SceneManager.LoadScene(currentIndex + 1);
+    }
+
     public void ReloadScenes()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(currentIndex);
     }
 
     public void QuitGame()

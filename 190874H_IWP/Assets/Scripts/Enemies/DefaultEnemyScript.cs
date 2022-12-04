@@ -20,6 +20,12 @@ public class DefaultEnemyScript : MonoBehaviour
     //Healthbar UI
     float enemybarSize = 1f;
 
+    //Audio
+    public AudioClip enemybulletSound;
+    public AudioClip enemydamagedSound;
+    public AudioClip enemydieSound;
+    public AudioSource enemyAudioSource;
+
     public GameObject damageEffect;
     [SerializeField] BlinkingEffect blinkingEffect;
 
@@ -40,6 +46,7 @@ public class DefaultEnemyScript : MonoBehaviour
     {
         if (collision.tag == "PlayerBullet")
         {
+            enemyAudioSource.PlayOneShot(enemydamagedSound);
             AdjustEnemyHealthBar(collision.gameObject);
             Destroy(collision.gameObject);
 
@@ -61,6 +68,7 @@ public class DefaultEnemyScript : MonoBehaviour
     {
         if (currentenemyHealth > 0)
         {
+            AudioSource.PlayClipAtPoint(enemydieSound, Camera.main.transform.position, 0.5f);
             currentenemyHealth -= collision.GetComponent<BulletScript>().bulletDamageTaken;
             float percentageenemyHP = currentenemyHealth / maxenemyHealth;
             enemyHealthbar.SizeAdjustEnemyHealth(percentageenemyHP);
@@ -80,6 +88,7 @@ public class DefaultEnemyScript : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(enemybulletspawnTime);
+            enemyAudioSource.PlayOneShot(enemybulletSound, 0.5f);
             EnemyNormalFire();
         }
     }
