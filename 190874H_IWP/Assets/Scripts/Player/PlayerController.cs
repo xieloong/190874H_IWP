@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public static List<PlayerController> playerControllerArray = new List<PlayerController>();
+
     public GameController gameController;
 
     public float speed = 5;
@@ -36,6 +38,29 @@ public class PlayerController : MonoBehaviour
     public AudioClip playerdamagedSound;
     public AudioClip playerdieSound;
 
+    void Awake()
+    {
+        if (playerControllerArray == null)
+        {
+
+            for (int i = 0; i < playerControllerArray.Count; i++)
+            {
+                if (playerControllerArray[i].gameController)
+                {
+                    gameController = playerControllerArray[i].gameController;
+                    break;  
+                }
+            }
+        }
+
+        //if (playerControllerArray.Contains(this) == false)
+        //{
+        //    playerControllerArray.Add(this);
+        //}
+        DontDestroyOnLoad(this);
+        controls = new Controls();
+    }
+
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
@@ -45,19 +70,20 @@ public class PlayerController : MonoBehaviour
         currentplayerHealth = maxplayerHealth;
     }
 
-    private void Awake()
-    {
-        controls = new Controls();
-    }
-
     private void OnEnable()
     {
         controls.Enable();
+        if (playerControllerArray.Contains(this) == false)
+        {
+            playerControllerArray.Add(this);
+            Debug.Log(playerControllerArray.Count); //jesus
+        }
     }
 
     private void OnDisable()
     {
         controls.Disable();
+        playerControllerArray.Remove(this);
     }
 
     // Update is called once per frame

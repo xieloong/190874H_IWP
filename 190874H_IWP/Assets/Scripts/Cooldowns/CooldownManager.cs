@@ -14,12 +14,12 @@ public class CooldownManager : MonoBehaviour
         {
             cooldownmanagerInstance = this;
         }
-        else if (cooldownmanagerInstance != this)
-        {
-            Destroy(this);
-        }
+        //else if (cooldownmanagerInstance != this)
+        //{
+        //    Destroy(this);
+        //}
 
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 
     void Update()
