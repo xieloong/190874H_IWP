@@ -314,11 +314,11 @@ MonoBehaviour:
   muzzleFlash: {fileID: 3955277168215227136}
   playerExplosion: {fileID: 7502412713019749354, guid: 5b413825938a9bf4497afcfec76f6eae, type: 3}
   playerHealthbar: {fileID: 4072013005429614261}
-  maxplayerHealth: 5
+  maxplayerHealth: 50
   currentplayerHealth: 0
-  audioSource: {fileID: 0}
-  playerdamagedSound: {fileID: 0}
-  playerdieSound: {fileID: 0}
+  audioSource: {fileID: 8049446653956858676}
+  playerdamagedSound: {fileID: 8300000, guid: a08399e614011d34e813a1d124c1966f, type: 3}
+  playerdieSound: {fileID: 8300000, guid: 10f0e9fcbc8380546a80f17ba2de9db5, type: 3}
 --- !u!50 &6389882112265525687
 Rigidbody2D:
   serializedVersion: 4
@@ -444,7 +444,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a86501191add6a54bb952d39a72864c4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

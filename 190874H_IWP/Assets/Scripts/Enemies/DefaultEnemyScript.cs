@@ -39,7 +39,7 @@ public class DefaultEnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.down * planeSpeed * Time.deltaTime);
+        //transform.Translate(Vector2.down * planeSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
