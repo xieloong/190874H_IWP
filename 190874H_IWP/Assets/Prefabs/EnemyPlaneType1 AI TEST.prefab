@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 707741275496235616}
   - component: {fileID: 707741275496235619}
   - component: {fileID: 707741275496235618}
-  - component: {fileID: 4966049025904170886}
   - component: {fileID: 2555399763184142547}
   - component: {fileID: 8794961804173701510}
   - component: {fileID: 9100723858826960932}
+  - component: {fileID: 1748558735471566081}
   - component: {fileID: 6358189457715627066}
   - component: {fileID: 4790234340532469466}
   - component: {fileID: 2845657875660246160}
@@ -116,34 +116,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4966049025904170886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 707741275496235621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43072562377ae8748804926716eae5b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemybulletspawnTime: 1
-  enemybulletSpawnPoint:
-  - {fileID: 7065848043993103230}
-  - {fileID: 6278979955832170897}
-  enemyBullet: {fileID: 8670988049431215806, guid: ac4735b276967864c80c3c8950fcb07b, type: 3}
-  enemyExplosion: {fileID: 7502412713019749354, guid: 5b413825938a9bf4497afcfec76f6eae, type: 3}
-  enemyHealthbar: {fileID: 4493780466386613760}
-  maxenemyHealth: 5
-  currentenemyHealth: 0
-  planeSpeed: 0.5
-  enemybulletSound: {fileID: 8300000, guid: a86501191add6a54bb952d39a72864c4, type: 3}
-  enemydamagedSound: {fileID: 8300000, guid: 03fb3af7b23c43a498a296491b0b8de4, type: 3}
-  enemydieSound: {fileID: 8300000, guid: 10f0e9fcbc8380546a80f17ba2de9db5, type: 3}
-  enemyAudioSource: {fileID: 6358189457715627066}
-  damageEffect: {fileID: 30392967673015071, guid: c9345531135c7d146b38fbe1d4bb523f, type: 3}
-  blinkingEffect: {fileID: 2555399763184142547}
 --- !u!114 &2555399763184142547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +189,32 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &1748558735471566081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707741275496235621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d048e990fa8c59f488326e1a8784f6ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemybulletspawnTime: 0.5
+  enemybulletSpawnPoint: []
+  enemyBullet: {fileID: 8670988049431215806, guid: ac4735b276967864c80c3c8950fcb07b, type: 3}
+  enemyExplosion: {fileID: 30392967673015071, guid: c9345531135c7d146b38fbe1d4bb523f, type: 3}
+  enemyHealthbar: {fileID: 4493780466386613760}
+  maxenemyHealth: 10
+  currentenemyHealth: 0
+  planeSpeed: 5
+  enemybulletSound: {fileID: 8300000, guid: a86501191add6a54bb952d39a72864c4, type: 3}
+  enemydamagedSound: {fileID: 8300000, guid: a08399e614011d34e813a1d124c1966f, type: 3}
+  enemydieSound: {fileID: 8300000, guid: 10f0e9fcbc8380546a80f17ba2de9db5, type: 3}
+  enemyAudioSource: {fileID: 6358189457715627066}
+  damageEffect: {fileID: 30392967673015071, guid: c9345531135c7d146b38fbe1d4bb523f, type: 3}
+  blinkingEffect: {fileID: 2555399763184142547}
 --- !u!82 &6358189457715627066
 AudioSource:
   m_ObjectHideFlags: 0
@@ -227,7 +225,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a86501191add6a54bb952d39a72864c4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

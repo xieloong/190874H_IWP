@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefaultEnemyScript : MonoBehaviour
+public class DefaultEnemyScript1 : MonoBehaviour
 {
     public float enemybulletspawnTime = 0.5f;
 
@@ -39,7 +39,7 @@ public class DefaultEnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.down * planeSpeed * Time.deltaTime);
+        //transform.Translate(Vector2.down * planeSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
