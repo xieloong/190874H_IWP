@@ -24,16 +24,19 @@ public class LevelLoader : MonoBehaviour
     public void NextScene()
     {
         SceneManager.LoadScene(currentIndex + 1);
+        GetComponent<Spawner>().lastEnemySpawned = false;
     }
 
     public void ReloadScenes()
     {
         SceneManager.LoadScene(currentIndex);
+        GetComponent<Spawner>().lastEnemySpawned = false;
     }
 
     public void AnyScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+        GetComponent<Spawner>().lastEnemySpawned = false;
     }
 
     public void QuitGame()
