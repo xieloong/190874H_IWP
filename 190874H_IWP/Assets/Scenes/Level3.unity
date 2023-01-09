@@ -2265,7 +2265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typesofEnemy:
-  - {fileID: 707741275496235621, guid: 620088dde088c3d4eb03424d1b103f36, type: 3}
+  - {fileID: 707741275496235621, guid: c94addb822a403b42ba74dc2d5c82f72, type: 3}
   respawnTime: 1
   enemyspawnCount: 5
   gameController: {fileID: 384117865}
