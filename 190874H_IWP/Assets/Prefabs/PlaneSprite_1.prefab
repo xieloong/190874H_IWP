@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6766c12043dd6d04a8601b18ceb58ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 0}
+  gameController: {fileID: 6352622513941091621, guid: a5522fbc71cc6964b84b3e54eb07c9f3, type: 3}
   speed: 10
   spawnPoint:
   - {fileID: 1064601111055310166}
@@ -314,7 +314,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 3955277168215227136}
   playerExplosion: {fileID: 7502412713019749354, guid: 5b413825938a9bf4497afcfec76f6eae, type: 3}
   playerHealthbar: {fileID: 4072013005429614261}
-  maxplayerHealth: 50
+  maxplayerHealth: 10
   currentplayerHealth: 0
   audioSource: {fileID: 8049446653956858676}
   playerdamagedSound: {fileID: 8300000, guid: a08399e614011d34e813a1d124c1966f, type: 3}

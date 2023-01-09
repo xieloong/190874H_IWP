@@ -55,6 +55,7 @@ public class GameController : MonoBehaviour
     public void GameOver()
     {
         Debug.Log(PlayerController.playerControllerArray.Count);
+
         if (PlayerController.playerControllerArray.Count <= 1)
         {
             gameoverMenu.SetActive(true);

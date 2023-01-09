@@ -916,7 +916,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 14047823cb3f4df4682f26ca8bc61231, type: 2}
+  - {fileID: 2100000, guid: 50f6338f4fde64e43b67e0e83e08f0f7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2365,6 +2365,7 @@ MonoBehaviour:
   respawnTime: 2
   enemyspawnCount: 10
   gameController: {fileID: 0}
+  lastEnemySpawned: 0
 --- !u!1 &1889547013
 GameObject:
   m_ObjectHideFlags: 0
