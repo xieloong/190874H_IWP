@@ -129,7 +129,7 @@ MonoBehaviour:
   enemybulletSpawnPoint:
   - {fileID: 7065848043993103230}
   - {fileID: 6278979955832170897}
-  enemyBullet: {fileID: 8670988049431215806, guid: ac4735b276967864c80c3c8950fcb07b, type: 3}
+  enemyBullet: {fileID: 8670988049431215806, guid: 2ea784badab392e499c34a10e3f42ceb, type: 3}
   enemyExplosion: {fileID: 7502412713019749354, guid: 5b413825938a9bf4497afcfec76f6eae, type: 3}
   enemyHealthbar: {fileID: 4493780466386613760}
   maxenemyHealth: 5

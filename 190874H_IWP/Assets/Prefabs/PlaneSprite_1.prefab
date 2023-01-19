@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2591303727438204705}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.99, y: -9.113, z: 0}
+  m_LocalPosition: {x: -0.13, y: -9.68, z: 0}
   m_LocalScale: {x: 1.7717855, y: 1.7622857, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -314,7 +314,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 3955277168215227136}
   playerExplosion: {fileID: 7502412713019749354, guid: 5b413825938a9bf4497afcfec76f6eae, type: 3}
   playerHealthbar: {fileID: 4072013005429614261}
-  maxplayerHealth: 10
+  maxplayerHealth: 100
   currentplayerHealth: 0
   audioSource: {fileID: 8049446653956858676}
   playerdamagedSound: {fileID: 8300000, guid: a08399e614011d34e813a1d124c1966f, type: 3}

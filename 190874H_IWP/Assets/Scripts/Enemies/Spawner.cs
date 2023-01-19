@@ -21,12 +21,10 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (lastEnemySpawned == true && FindObjectOfType<DefaultEnemyScript>() == null && FindObjectOfType<DefaultEnemyScript1>() == null)
+        if (lastEnemySpawned == true && FindObjectOfType<DefaultEnemyScript>() == null && FindObjectOfType<DefaultEnemyScript1>() == null && FindObjectOfType<DefaultEnemyScript2>() == null)
         {
             StartCoroutine(gameController.LevelCompleted());
         }
-
-
     }
 
     IEnumerator GameObjectSpawner()

@@ -2225,7 +2225,7 @@ MonoBehaviour:
   - {fileID: 5370314407313155382, guid: 48b9a3e5ee1fbb54cab9e2e46cc05f6f, type: 3}
   respawnTime: 3
   enemyspawnCount: 10
-  gameController: {fileID: 0}
+  gameController: {fileID: 1705418821}
   lastEnemySpawned: 0
 --- !u!1 &1240047573
 GameObject:
