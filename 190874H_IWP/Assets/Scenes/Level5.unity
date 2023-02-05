@@ -2368,7 +2368,7 @@ MonoBehaviour:
   typesofEnemy:
   - {fileID: 707741275496235621, guid: 417255bb814a32246a790bf1e8c7708e, type: 3}
   respawnTime: 2
-  enemyspawnCount: 1
+  enemyspawnCount: 10
   gameController: {fileID: 384117865}
   lastEnemySpawned: 0
 --- !u!1 &1240047573
@@ -3678,7 +3678,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level3
+          m_StringArgument: EndMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1941189000

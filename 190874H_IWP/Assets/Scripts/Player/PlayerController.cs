@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
         if (playerControllerArray.Contains(this) == false)
         {
             playerControllerArray.Add(this);
-            Debug.Log(playerControllerArray.Count); //jesus
+            Debug.Log(playerControllerArray.Count); 
         }
     }
 
@@ -90,6 +90,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         transform.Translate(new Vector2(movementInput.x, movementInput.y) * speed * Time.deltaTime);
+    }
+
+    void FixedUpdate()
+    {
+
     }
 
     public void OnMove(InputAction.CallbackContext ctx)

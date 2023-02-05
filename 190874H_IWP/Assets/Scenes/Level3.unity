@@ -2366,9 +2366,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typesofEnemy:
-  - {fileID: 707741275496235621, guid: 417255bb814a32246a790bf1e8c7708e, type: 3}
+  - {fileID: 707741275496235621, guid: c94addb822a403b42ba74dc2d5c82f72, type: 3}
+  - {fileID: 5370314407313155382, guid: 48b9a3e5ee1fbb54cab9e2e46cc05f6f, type: 3}
+  - {fileID: 707741275496235621, guid: bdf87627f67d49f4eb9949a1217dffa5, type: 3}
   respawnTime: 2
-  enemyspawnCount: 1
+  enemyspawnCount: 20
   gameController: {fileID: 384117865}
   lastEnemySpawned: 0
 --- !u!1 &1240047573
